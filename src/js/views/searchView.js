@@ -69,6 +69,7 @@ const renderButton = (page, numResult, number) => {
     } else if(page === pages){
         // Only display previous page
         button = createButton(page, 'prev');
+    // else if would have been better...
     }else {
         // display both next and previous page
         button = `
@@ -80,6 +81,7 @@ const renderButton = (page, numResult, number) => {
 }
 
 export const renderResult = (recipes, page=1, number=10) => {
+    // This 10 should actually be number... to make it dynamic... 
     const start = (page - 1) * 10;
     const end = page * 10;
     recipes.slice(start, end).forEach(renderRecipe);
